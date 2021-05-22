@@ -4,7 +4,7 @@ base:
   os_dockerfile: |-
     # This dockerfile defines the base disk image for your VMs
     FROM quay.io/testfaster/kube-ubuntu
-    ENV cache-bust 1
+    ENV cache-bust 2
     RUN apt update
     RUN apt install gnupg2 software-properties-common rsync -y
     RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
@@ -34,7 +34,7 @@ base:
     # already running when you testctl get
     #!/bin/bash
     set -euo pipefail
-    git clone https://github.com/combinator-ml/terraform-k8s-jupyter repo
+    git clone --single-branch --branch main https://github.com/combinator-ml/terraform-k8s-jupyter repo
     cd repo/examples/testfaster
     terraform init
     KUBE_CONFIG_PATH=~/.kube/config terraform apply -auto-approve
