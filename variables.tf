@@ -15,3 +15,9 @@ variable "image" {
   default     = "jupyter/scipy-notebook:python-3.9.2"
   type        = string
 }
+
+variable "command" {
+  description = "Container command"
+  default     = ["start-notebook.sh", "--NotebookApp.token=''"]
+  type        = list(string)
+}

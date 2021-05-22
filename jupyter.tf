@@ -29,6 +29,7 @@ resource "kubernetes_deployment" "jupyter" {
             name           = "http"
             container_port = 8888
           }
+          command = var.command
         }
       }
     }
