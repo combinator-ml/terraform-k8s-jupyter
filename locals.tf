@@ -1,3 +1,5 @@
 locals {
-  # Attempt to place all strings or generated fields here, rather than in the files
+  name            = "jupyter"
+  deployment_name = "${var.prefix}-${local.name}-deployment"
+  app_label       = "${var.prefix}-${local.name}"
 }
