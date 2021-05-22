@@ -1,5 +1,5 @@
 locals {
   name            = "jupyter"
-  deployment_name = "${var.prefix}-${local.name}-deployment"
-  app_label       = "${var.prefix}-${local.name}"
+  deployment_name = "${var.name_prefix}-${local.name}-deployment"
+  app_label       = "${var.name_prefix}-${local.name}"
 }
